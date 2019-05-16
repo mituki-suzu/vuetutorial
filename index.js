@@ -70,6 +70,16 @@ var app7 = new Vue({
     }
 })
 
+var obj = {
+    foo: 'bar'
+}
+// freezeすることで変更を起こさせない
+Object.freeze(obj)
+var app8 = new Vue({
+    el: '#app8',
+    data: obj
+})
+
 // 直接ではなくても代入できる
 app.message = "I have a chenge message!"
 app2.message = 'some new message'
@@ -77,3 +87,5 @@ app2.message = 'some new message'
 app3.seen = false
 // pushで要素の追加
 app4.todos.push({ text: 'New item' })
+
+

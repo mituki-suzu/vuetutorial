@@ -48,6 +48,12 @@
             </ol>
         </div>
 
+        <div id="app8">
+            <p>{{ foo }}</p>
+            <!-- これは `foo` を更新しなくなります! -->
+            <button v-on:click="foo = 'baz'">Change it</button>
+        </div>
+
         <script src="index.js"></script>
     </body>
 </html>
