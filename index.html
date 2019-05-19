@@ -67,6 +67,7 @@
                 <button>Add</button>
             </form>
             <ul>
+                <!-- templateは通常そのままコンポーネントになるがDOMの都合上isを使っている -->
                 <li
                 is="todo-item"
                 v-for="(todo, index) in todos"
