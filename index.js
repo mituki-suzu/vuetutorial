@@ -80,6 +80,39 @@ var app8 = new Vue({
     data: obj
 })
 
+Vue.component('todo-item',{
+    template:'\
+    <li>\
+    {{title}}\
+    <button v-on:click="$emit(\'remove\')">Remove</button>\
+    </li>\
+    ',
+    props:['title']
+})
+
+new Vue({
+    el:'#todo-list-example',
+    data:{
+        newTodoText:' ',
+        todos:[
+            {
+                id:　1,
+                title: 'Training',
+            }
+        ],
+        newTodoId:2
+    },
+    methods: {
+        addNewTodo: function () {
+            this.todos.push({
+                id: this.nextTodoId++,
+                title: this.newTodoText
+            })
+            this.newTodoText = ''
+        }
+    }
+})
+
 // 直接ではなくても代入できる
 app.message = "I have a chenge message!"
 app2.message = 'some new message'
