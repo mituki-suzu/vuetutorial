@@ -78,6 +78,24 @@
             </ul>
         </div>
 
+        <div id="blog-post-demo">
+            <blog-post
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:title="post.title"
+            ></blog-post>
+        </div>
+
+        <div id="blog-post-demo2">
+            <blog-post2
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+                v-on:enlarge-text="postFontSize += 0.1"
+            ></blog-post2>
+        </div>
+
+
         <script src="index.js"></script>
     </body>
 </html>

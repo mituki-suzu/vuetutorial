@@ -90,7 +90,7 @@ Vue.component('todo-item',{
     props:['title']
 })
 
-new Vue({
+var app9 = new Vue({
     el:'#todo-list-example',
     data:{
         newTodoText:' ',
@@ -110,6 +110,47 @@ new Vue({
             })
             this.newTodoText = ''
         }
+    }
+})
+
+Vue.component('blog-post', {
+    props: ['title'],
+    template: '<h3>{{ title }}</h3>'
+})
+
+var app10 = new Vue({
+    el: '#blog-post-demo',
+    data: {
+        posts: [
+            { id: 1, title: 'My journey with Vue' },
+            { id: 2, title: 'Blogging with Vue' },
+            { id: 3, title: 'Why Vue is so fun' }
+        ]
+    }
+})
+
+Vue.component('blog-post2', {
+    props: ['post'],
+    template: `
+    <div class="blog-post2">
+        <h3>{{ post.title }}</h3>
+        <button v-on:click="$emit('enlarge-text')">
+            Enlarge text
+        </button>
+        <div v-html="post.content"></div>
+    </div>
+    `
+})
+
+
+var app11 = new Vue({
+    el: '#blog-post-demo2',
+    data: {
+        posts: [
+            { id: 1, title: 'My journey with Vue' },
+            { id: 2, title: 'Blogging with Vue' },
+            { id: 3, title: 'Why Vue is so fun' }
+        ]
     }
 })
 
